@@ -4,7 +4,7 @@ function render({ children }) {
     return children
 }
 
-function onInit({ exc, id, props }) {
+function init({ exc, id, props }) {
     exc('load(["https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js", "https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.min.js"])', {}, () => {
         tippy("#" + id + "_0", {
             content: props.content || "提示内容",
@@ -24,7 +24,7 @@ $plugin({
     }],
     noContainer: true,
     render,
-    onInit
+    init
 })
 
 /*
